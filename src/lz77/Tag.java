@@ -24,13 +24,7 @@ public class Tag {
         this.next = next;
     }
     
-    public int countTags (List <Tag> list){
-        int i = 0 ; 
-        for (Tag t : list){
-            i++;
-        }
-        return i ;
-    }
+   
     
 
     @Override
