@@ -18,10 +18,7 @@ import java.util.List;
 public class LZ77 {
 
     public static int existsBefore(String s, StringBuilder substring, int i) {
-
         String before = s.substring(0, i);
-//        System.out.println(before);
-//        System.out.println(substring+" : "+before.lastIndexOf(substring.toString()));
         if (before.contains(substring)) {
             return before.lastIndexOf(substring.toString());
         }
@@ -44,7 +41,6 @@ public class LZ77 {
     }
 
     public static int getIndex(String s, StringBuilder substring, int i) {
-
         String before = s.substring(0, i);
         int lastIndex = before.lastIndexOf(substring.substring(0, substring.length() - 1));
         return i - lastIndex;
@@ -103,14 +99,14 @@ public class LZ77 {
 
         }
 
-        for (Tag tag : li) {
-            System.out.println(tag);
+        for (Tag t : li) {
+            System.out.println(t);
         }
         System.out.println("Compressed Data Size is  " + CompressedDataSize(li));
         System.out.println("*******************************************************************************");
         String add = "";
         for (Tag t : li) {
-            // if the length and index is 0 just add the character 
+            // if the length and index is 0 add it just add the character 
             if (t.index == 0 && t.length == 0) {
                 add += t.next;
             } else {
